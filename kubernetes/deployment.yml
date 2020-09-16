@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: baemindelivery
-          image: username/baemindelivery:latest
+          image: 271153858532.dkr.ecr.ap-northeast-2.amazonaws.com/admin20-flower-baemindelivery:v1
           ports:
             - containerPort: 8080
           readinessProbe:
