@@ -77,9 +77,10 @@ phases:
                     ports:
                       - containerPort: 8080
                     readinessProbe:
-                      httpGet:
-                        path: /actuator/health
-                        port: 8080
+                      exec:
+                        command:
+                        - cat
+                        - /tmp/healthy
                       initialDelaySeconds: 10
                       timeoutSeconds: 2
                       periodSeconds: 5
@@ -89,7 +90,7 @@ phases:
                         command:
                         - cat
                         - /tmp/healthy
-                      initialDelaySeconds: 120
+                      initialDelaySeconds: 60
                       timeoutSeconds: 2
                       periodSeconds: 5
                       failureThreshold: 5
